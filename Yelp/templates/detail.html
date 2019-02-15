@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 {% load static %}
@@ -34,37 +36,14 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Momo Heaven</h1>
-      <p class="lead text-muted">It is Lhasa Fast Food, a purveyor of Tibetan Delight well worthy of a great and harrowing adventure. One may not experience quite the same life threatening challenges of an attack on Everest, but getting to Lhasa is an undertaking itself (and almost half the fun) once you arrive in the dizzying neighborhood it calls home.</p>
+      <h1 class="jumbotron-heading">Food detail</h1>
+      <p class="lead text-muted">{{ food.summary }}</p>
+      <img src="{{ food.image.url }}" height=300></img>
       <p>
-        <a href="mailto:tsewangrinzin101@gmail.com" class="btn btn-primary my-2">Email Us</a>
-
+        <a href="{% url 'pizza'%}" class="btn btn-primary my-2">Back</a>
       </p>
-      <img src="{% static 'lhasafastfood.jpg' %}" height=300></img>
     </div>
   </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-  <div class="row">
-    {% for food in foods.all %}
-          <div class="col-md-4">
-            <a href="{% url 'detail' food.id %}">
-            <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="{{ food.image.url }}" height=600>
-              <div class="card-body">
-                <p class="card-text">{{ food.summary }}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-          </div>
-          </a>
-          </div>
-          {% endfor %}
 
 </main>
 
